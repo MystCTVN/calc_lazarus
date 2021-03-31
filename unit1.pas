@@ -5,7 +5,8 @@ unit Unit1;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
+  ExtCtrls, Buttons;
 
 type
 
@@ -36,7 +37,17 @@ type
     Button_8: TButton;
     Button_9: TButton;
     Edit1: TEdit;
+    Image1: TImage;
     MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
     Menu_base: TMenuItem;
     Menu_engin: TMenuItem;
     Menu_rus: TMenuItem;
@@ -60,9 +71,18 @@ type
     procedure Button_sqrtClick(Sender: TObject);
     procedure Button_squaringClick(Sender: TObject);
     procedure Button_sumClick(Sender: TObject);
+    procedure FlowPanel1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+  //  procedure Image1Paint(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
+    procedure MenuItem7Click(Sender: TObject);
     procedure Menu_1_1_copyClick(Sender: TObject);
     procedure Menu_enginClick(Sender: TObject);
+    procedure Panel1Click(Sender: TObject);
+ //   procedure SpeedButton1Paint(Sender: TObject);
   private
 
   public
@@ -84,6 +104,32 @@ begin
 
 end;
 
+procedure TForm_base.Image1Click(Sender: TObject);
+begin
+
+end;
+
+
+procedure TForm_base.MenuItem4Click(Sender: TObject);
+begin
+  Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName) + '\8.jpg');
+end;
+
+procedure TForm_base.MenuItem5Click(Sender: TObject);
+begin
+  Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\9.jpg');
+end;
+
+procedure TForm_base.MenuItem6Click(Sender: TObject);
+begin
+   Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+ '\2.jpg');
+end;
+
+procedure TForm_base.MenuItem7Click(Sender: TObject);
+begin
+  Button_1.Color:=clWhite;
+end;
+
 procedure TForm_base.Menu_1_1_copyClick(Sender: TObject);
 begin
 
@@ -95,7 +141,18 @@ procedure TForm_base.Menu_enginClick(Sender: TObject);
 begin
   Form_base.Hide;
   Form_engin.Show;
+  Form_engin.Image1.Picture:=Form_base.Image1.Picture;
 end;
+
+procedure TForm_base.Panel1Click(Sender: TObject);
+begin
+
+end;
+
+//procedure TForm_base.SpeedButton1Paint(Sender: TObject);
+//begin
+//  SpeedButton1.Glyph.LoadFromFile(ExtractFilePath(Application.ExeName)+ '\white.png');
+//end;
 
 procedure TForm_base.ButtonClick(Sender: TObject);    //кнопки цифр
 begin
@@ -111,6 +168,11 @@ begin
                           Edit1.Clear;
                           sign:=(Sender as TButton).Caption;
                         end;
+end;
+
+procedure TForm_base.FlowPanel1Click(Sender: TObject);
+begin
+
 end;
 
 procedure TForm_base.Button_equallyClick(Sender: TObject);

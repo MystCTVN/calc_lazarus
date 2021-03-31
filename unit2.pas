@@ -5,7 +5,8 @@ unit Unit2;
 interface
 
 uses
-  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus;
+  Classes, SysUtils, Forms, Controls, Graphics, Dialogs, StdCtrls, Menus,
+  ExtCtrls;
 
 type
 
@@ -45,7 +46,18 @@ type
     Button_8: TButton;
     Button_9: TButton;
     Edit1: TEdit;
+    Image1: TImage;
+    ImageList1: TImageList;
     MainMenu1: TMainMenu;
+    MenuItem1: TMenuItem;
+    MenuItem2: TMenuItem;
+    MenuItem3: TMenuItem;
+    MenuItem4: TMenuItem;
+    MenuItem5: TMenuItem;
+    MenuItem6: TMenuItem;
+    MenuItem7: TMenuItem;
+    MenuItem8: TMenuItem;
+    MenuItem9: TMenuItem;
     M_1_calc: TMenuItem;
     M_rus: TMenuItem;
     M_eng: TMenuItem;
@@ -74,6 +86,12 @@ type
     procedure Button_squaringClick(Sender: TObject);
     procedure Button_stepenClick(Sender: TObject);
     procedure Button_sumClick(Sender: TObject);
+    procedure Edit1Change(Sender: TObject);
+    procedure Image1Click(Sender: TObject);
+//    procedure MenuItem1Click(Sender: TObject);
+    procedure MenuItem4Click(Sender: TObject);
+    procedure MenuItem5Click(Sender: TObject);
+    procedure MenuItem6Click(Sender: TObject);
     procedure M_baseClick(Sender: TObject);
 
 
@@ -118,9 +136,38 @@ begin
                         end;
 end;
 
+procedure TForm_engin.Edit1Change(Sender: TObject);
+begin
+
+end;
+
+procedure TForm_engin.Image1Click(Sender: TObject);
+begin
+
+end;
+
+
+
+procedure TForm_engin.MenuItem4Click(Sender: TObject);
+begin
+  Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName) + '\8.jpg');
+end;
+
+procedure TForm_engin.MenuItem5Click(Sender: TObject);
+begin
+  Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+'\9.jpg');
+end;
+
+procedure TForm_engin.MenuItem6Click(Sender: TObject);
+begin
+  Image1.Picture.LoadFromFile(ExtractFilePath(Application.ExeName)+ '\2.jpg');
+
+end;
+
 procedure TForm_engin.M_baseClick(Sender: TObject);
 begin
   Form_base.Show;
+  Form_base.Image1.Picture:=Form_engin.Image1.Picture;
   Form_engin.Hide;
 end;
 
